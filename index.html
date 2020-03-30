@@ -10,23 +10,13 @@
   <body>
     <h1>To Do!</h1>
     <h2>Alex's to do list:</h2>
-    <p>
-      <label class="listItems">
-        <input type="checkbox" />
-        Feed Kitty
-      </label>
-    </p>
-    <p>
-      <label class="listItems">
-        <input type="checkbox" />
-        Cuddle Kitty
-      </label>
-    </p>
-    <p>
-      <label class="listItems">
-        <input type="checkbox" />
-        Play with Kitty
-      </label>
-    </p>
+    <input type="text" id="input" placeholder="Title..." />
+    <button id="add" onclick="addItem()">Add</button>
+
+    <ul id="myUl">
+      <li class="listItems">Feed Kitty</li>
+      <li class="listItems">Cuddle Kitty</li>
+      <li class="listItems">Play with Kitty</li>
+    </ul>
   </body>
 </html>

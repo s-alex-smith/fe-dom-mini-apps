@@ -1,21 +1,23 @@
-console.log("hello there");
-
-// list of items
-// when clicked will strike through & add checkmark
-// when clicked again will unstrike & uncheck
-
 const itemsInList = document.getElementsByClassName("listItems");
 const jsItemsInList = [...itemsInList];
-// // console.dir(jsItemsInList);
+console.log(jsItemsInList);
+jsItemsInList.forEach(element => {
+  element.onclick = event => {
+    if (event.target.style.textDecoration.length === 0) {
+      event.target.style.textDecoration = "line-through";
+    } else {
+      event.target.style.textDecoration = "";
+    }
+  };
+});
 
-jsItemsInList[0].onclick = clickEvent => {
-  jsItemsInList[0] = clickEvent.target.style.textDecoration = "line-through";
-};
-
-jsItemsInList[1].onclick = clickEvent => {
-  jsItemsInList[1] = clickEvent.target.style.textDecoration = "line-through";
-};
-
-jsItemsInList[2].onclick = clickEvent => {
-  jsItemsInList[2] = clickEvent.target.style.textDecoration = "line-through";
+const addItem = () => {
+  let node = document.createElement("li");
+  let newItem = document.getElementById("input").value;
+  let text = document.createTextNode(newItem);
+  node.appendChild(text);
+  document.getElementById("myUl").appendChild(node);
+  jsItemsInList.push(node);
+  console.log(jsItemsInList);
+  console.dir(node);
 };
